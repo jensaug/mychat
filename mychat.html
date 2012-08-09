@@ -1,0 +1,32 @@
+<head>
+  <title>mychat</title>
+</head>
+
+<body>
+    <div id="hello">
+        {{> hello}}
+    </div>
+    <div id="main">
+        {{> main}}
+    </div> 
+    <div id="line">
+        {{> line}}
+    </div>      
+</body>
+
+<template name="hello">
+  <h1>Hello Chat!</h1>
+</template>
+
+<template name="main">
+    {{#each chats}}
+        <b>{{name}}</b>: <i>{{timestamp}}</i> {{message}}<br/>
+    {{/each}}
+</template>
+
+<template name="line">
+  <p><b>Say something</b></p>
+  <input type="text" id="nick" value="Coward" />
+  <input type="text" id="message" />
+  <input type="button" id="submit" value="Click" />
+</template>
